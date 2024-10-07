@@ -9,7 +9,7 @@ struct TrieNode {
     vector<TrieNode*> children;
 };
 
-void insert(string word, TrieNode* root) {
+void insert(string word, TrieNode* root) { //Complexity O(n*m) n = number of words, m = length of the word
     TrieNode* currentNode = root;
 
     for (char c : word) {
@@ -34,7 +34,7 @@ void insert(string word, TrieNode* root) {
     }
 }
 
-bool search(string word, TrieNode* root){
+bool search(string word, TrieNode* root){ //Complexity O(n*m) n = number of words, m = length of the word
     TrieNode* currentNode = root;
 
     for (char c : word) {
@@ -53,7 +53,7 @@ bool search(string word, TrieNode* root){
     return true;
 }
 
-void printTrie(TrieNode* root){
+void printTrie(TrieNode* root){ //Complexity O(n) n = number of nodes
     cout << "NODO" << endl;
     for(int i = 0; i < root->children.size(); i++){
         cout << root->children[i]->nodeChar << endl;
